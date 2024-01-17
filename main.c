@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "monty.h"
 /**
@@ -10,7 +11,6 @@
 int main(int argc, char *argv[])
 {
 	char *line = NULL;
-	size_t len = 0;
 	unsigned int line_num = 0;
 	FILE *file;
 
@@ -26,8 +26,14 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
+	line = (char *)malloc(sizeof(char) * 1024);
+	if (!line)
+	{
+		fprintf(stderr, "Error: Memory allocation failed\n");
+		exit(EXIT_FAILURE);
+	}
 	/*Parse file and execute instructions*/
-	while (fgets(line, len, file) != NULL)
+	while (fgets(line, 1024, file) != NULL)
 	{
 		line_num++;
 	}
