@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "monty.h"
 /**
  * main - main
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	/*Parse file and execute instructions*/
-	while (getline(&line, &len, file) != -1)
+	while (fgets(line, len, file) != NULL)
 	{
 		line_num++;
 	}
