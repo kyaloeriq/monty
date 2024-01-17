@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	size_t len = 0;
 	unsigned int line_num = 0;
 	FILE *file;
-	global_stack = NULL;
+
 
 	if (argc != 2)
 	{
