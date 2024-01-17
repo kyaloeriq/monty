@@ -1,5 +1,9 @@
 #include "monty.h"
 /**
+ * pall - displays contents of the stack
+ * @stack:
+ * @line_num:
+ * Return: void
  */
 void pall(stack_t **stack, unsigned int line_num)
 {
