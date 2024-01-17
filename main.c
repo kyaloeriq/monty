@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Memory allocation failed\n");
 		fclose(file);
 		exit(EXIT_FAILURE);
-	}/*Parse file and execute instructions*/
+	} /*Parse file and execute instructions*/
 	while (fgets(line, 1024, file) != NULL)
 	{
 		line_num++;
