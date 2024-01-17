@@ -21,7 +21,17 @@ void process_line(char line[1024], stack_t **stack, unsigned int line_num)
 	{
 		if (strcmp(opcode, "push") == 0)
 		{
-			value = atoi(arg);
+			if (arg == NULL)
+			{
+				fprintf(stderr, "L%u: usage: push integer\n", line_num);
+				exit(EXIT_FAILURE);
+			}
+			value = atoi(arg); /*Convert argument to an integer*/
+			if (value == 0 && strcmp(arg, "0") != 0)
+			{
+				fprintf(stderr, "L%u: usage: push integer\n", line_num);
+				exit(EXIT_FAILURE);
+			} /*Call the push function*/
 			push(stack, line_num, value);
 		}
 		else if (strcmp(opcode, "pall") == 0)
