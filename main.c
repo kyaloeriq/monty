@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
 	while (fgets(line, 1024, file) != NULL)
 	{
 		line_num++;
+		process_line(line, &stack, line_num);
 	}
 	/*Clean up and close file*/
 	free(line);
