@@ -26,5 +26,4 @@ void push(stack_t **stack, unsigned int line_num, int value)
 	new_node->n = value;
 	new_node->next = *stack; /*New node's next pointer to the current top*/
 	*stack = new_node; /*Update the stack's top to the new node*/
-
-
+}

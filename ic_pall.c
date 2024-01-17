@@ -3,7 +3,7 @@
  */
 void pall(stack_t **stack, unsigned int line_num)
 {
-	stack *current = *stack;
+	stack_t *current = *stack;
 
 	while (current)
 	{
@@ -12,4 +12,3 @@ void pall(stack_t **stack, unsigned int line_num)
 	}
 	(void)line_num; 
 }
-
