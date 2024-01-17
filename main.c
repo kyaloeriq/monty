@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "monty.h"
 /**
  * main - main
@@ -7,11 +8,11 @@
  */
 int main(int argc, char *argv[])
 {
-	FILE *file;
-	global_stack = NULL;
 	char *line = NULL;
 	size_t len = 0;
 	unsigned int line_num = 0;
+	FILE *file;
+	global_stack = NULL;
 
 	if (argc != 2)
 	{
