@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "monty.h"
 /**
  * process_line - Processes line and executes operation
@@ -5,7 +8,7 @@
  * @stack: pinter to stack
  * @line_num: number where instruction appears
  */
-void process_line(char *line, stack_t **stack, unsigned int line_num)
+void process_line(char line[1024], stack_t **stack, unsigned int line_num)
 {
 	char *opcode, *arg;
 
