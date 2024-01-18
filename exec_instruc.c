@@ -11,23 +11,24 @@
 void exec_instruc(instruction_t instr, stack_t **stack, unsigned int line_num)
 {
 	char *opcode = NULL;
-	char *arg = NULL;
 	int value;
+	char value_str[12];
 
 	if (!instr.opcode)
 		return;
 	if (strcmp(instr.opcode, "push") == 0)
 	{
-		if (!arg)
+		if (!instr.arg)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_num);
 			exit(EXIT_FAILURE);
-		} value = atoi(arg);
-		if (value == 0 && strcmp(arg, "0") != 0)
+		} value = atoi(instr.arg);
+		if (value == 0 && instr.arg[0] != 0)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_num);
 			exit(EXIT_FAILURE);
-		} push(stack, line_num, value);
+		} sprintf(value_str, "%d", value); 
+		push(stack, line_num, value_str);
 	}
 	else if (strcmp(instr.opcode, "pall") == 0)
 		pall(stack, line_num);
@@ -47,5 +48,4 @@ void exec_instruc(instruction_t instr, stack_t **stack, unsigned int line_num)
 	{ /*Handles unknown opcode*/
 		fprintf(stderr, "L%u: unknown opcode %s\n", line_num, opcode);
 		exit(EXIT_FAILURE);
-	}
-}
+	} }
