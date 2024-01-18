@@ -2,7 +2,7 @@
 /**
  * sub - subtracts the top element of the stack
  * @stack: pointer to stack
- * line_num: number of line
+ * @line_num: number of line
  */
 void sub(stack_t **stack, unsigned int line_num)
 {
