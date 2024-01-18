@@ -42,5 +42,6 @@ int main(int argc, char *argv[]);
 void pint(stack_t **stack, unsigned int line_num);
 void process_line(char *line, stack_t **stack, unsigned int line_num);
 void pop(stack_t **stack, unsigned int line_num);
+void swap(stack_t **stack, unsigned int line_num);
 
 #endif
