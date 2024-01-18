@@ -38,9 +38,14 @@ int main(int argc, char *argv[])
 	{
 		line_num++;
 		instr = parse_line(line);
+		if (!instr.opcode)
+		{
+			fprintf(stderr, "L%u: unknown instruction (empty line)\n", line_num);
+			free(line);
+			fclose(file);
+			exit(EXIT_FAILURE); }
 		exec_instruc(instr, &stack, line_num);
-	}
-	/*Clean up and close file*/
+	} /*Clean up and close file*/
 	free(line);
 	fclose(file);
 	return (EXIT_SUCCESS);
