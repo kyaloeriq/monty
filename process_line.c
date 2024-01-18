@@ -38,6 +38,18 @@ void process_line(char line[1024], stack_t **stack, unsigned int line_num)
 		{
 			pall(stack, line_num);
 		}
+		else if (strcmp(opcode, "pint") == 0)
+		{
+			pint(stack, line_num);
+		}
+		else if (strcmp(opcode, "pop") == 0)
+		{
+			pop(stack, line_num);
+		}
+		else if (strcmp(opcode, "swap") == 0)
+		{
+			swap(stack, line_num);
+		}
 		else
 		{ /*Handles unknown opcode*/
 			fprintf(stderr, "Error: Unknown opcode %s\n", opcode);
