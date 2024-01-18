@@ -11,7 +11,8 @@
  */
 void exec_instruc(instruction_t instr, stack_t **stack, unsigned int line_num)
 {
-	char *opcode, *arg;
+	char *opcode = NULL;
+        char *arg = NULL;
 	int value;
 
 	if (!instr.opcode)
