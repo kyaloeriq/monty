@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	line = (char *)malloc(sizeof(char) * 1024);
 	if (!line)
 	{
-		fprintf(stderr, "Error: Memory allocation failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		fclose(file);
 		exit(EXIT_FAILURE);
 	} /*Parse file and execute instructions*/
@@ -44,4 +44,3 @@ int main(int argc, char *argv[])
 	fclose(file);
 	return (EXIT_SUCCESS);
 }
-
