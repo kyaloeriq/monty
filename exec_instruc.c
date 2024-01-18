@@ -27,7 +27,7 @@ void exec_instruc(instruction_t instr, stack_t **stack, unsigned int line_num)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_num);
 			exit(EXIT_FAILURE);
-		} sprintf(value_str, "%d", value); 
+		} sprintf(value_str, "%d", value);
 		push(stack, line_num, value_str);
 	}
 	else if (strcmp(instr.opcode, "pall") == 0)
