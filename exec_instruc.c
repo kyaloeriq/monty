@@ -3,16 +3,15 @@
 #include <string.h>
 #include "monty.h"
 /**
- * process_line - Processes line and executes operation
+ * exec_instruc - executes instructions
  * @instr: opcode
- * @line: line
  * @stack: pinter to stack
  * @line_num: number where instruction appears
  */
 void exec_instruc(instruction_t instr, stack_t **stack, unsigned int line_num)
 {
 	char *opcode = NULL;
-        char *arg = NULL;
+	char *arg = NULL;
 	int value;
 
 	if (!instr.opcode)
