@@ -1,3 +1,4 @@
+#include <string.h>
 #include "monty.h"
 /**
  * parse_line - parses a line into an instruction
