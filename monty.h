@@ -40,6 +40,7 @@ void push(stack_t **stack, unsigned int line_num, int value);
 void pall(stack_t **stack, unsigned int line_num);
 int main(int argc, char *argv[]);
 void pint(stack_t **stack, unsigned int line_num);
+instruction_t parse_line(char line[1024]);
 void exec_instruc(instruction_t instr, stack_t **stack, unsigned int line_num);
 void pop(stack_t **stack, unsigned int line_num);
 void swap(stack_t **stack, unsigned int line_num);
