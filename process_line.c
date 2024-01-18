@@ -30,8 +30,7 @@ void process_line(char line[1024], stack_t **stack, unsigned int line_num)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_num);
 			exit(EXIT_FAILURE);
-		}
-		push(stack, line_num, value);
+		} push(stack, line_num, value);
 	}
 	else if (strcmp(opcode, "pall") == 0)
 		pall(stack, line_num);
@@ -45,6 +44,8 @@ void process_line(char line[1024], stack_t **stack, unsigned int line_num)
 		add(stack, line_num);
 	else if (strcmp(opcode, "nop") == 0)
 		nop(stack, line_num);
+	else if (strcmp(opcode, "nop") == 0)
+		sub(stack, line_num);
 	else
 	{ /*Handles unknown opcode*/
 		fprintf(stderr, "L%u: unknown opcode %s\n", line_num, opcode);
