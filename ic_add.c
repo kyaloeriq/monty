@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * add - adds the top two elements of the stack
+ * @stack: pointer to stack
+ * @line_num: number of line
+ */
 void add(stack_t **stack, unsigned int line_num)
 {
 	if (!*stack || !(*stack)->next)
