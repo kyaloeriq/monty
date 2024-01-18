@@ -3,7 +3,7 @@
  * push - pushes an element to the stack
  * @stack: pointer to the stack
  * @line_num: line number in the file
- * @value: element to be pushed
+ * @value_str: element to be pushed
  */
 void push(stack_t **stack, unsigned int line_num, char *value_str)
 {
