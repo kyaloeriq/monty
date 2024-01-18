@@ -8,6 +8,7 @@
 instruction_t parse_line(char line[1024])
 {
 	instruction_t instr;
+
 	instr.opcode = strtok(line, " \t\n");
 
 	if (instr.opcode)
