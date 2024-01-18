@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	unsigned int line_num = 0;
 	FILE *file;
 	stack_t *stack = NULL;
-
+	instruction_t instr;
 
 	if (argc != 2)
 	{
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 	while (fgets(line, 1024, file) != NULL)
 	{
 		line_num++;
-		instruction_t instr = parse_line(line);
+		instr = parse_line(line);
 		exec_instruc(instr, &stack, line_num);
 	}
 	/*Clean up and close file*/
