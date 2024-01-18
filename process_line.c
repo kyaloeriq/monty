@@ -21,7 +21,12 @@ void process_line(char line[1024], stack_t **stack, unsigned int line_num)
 		return;
 	if (strcmp(opcode, "push") == 0)
 	{
-		if (!arg || (!(value = atoi(arg)) && strcmp(arg, "0") != 0))
+		if (!arg)
+		{
+			fprintf(stderr, "L%u: usage: push integer\n", line_num);
+			exit(EXIT_FAILURE);
+		} value = atoi(arg);
+		if (value == 0 && strcmp(arg, "0") != 0)
 		{
 			fprintf(stderr, "L%u: usage: push integer\n", line_num);
 			exit(EXIT_FAILURE);
