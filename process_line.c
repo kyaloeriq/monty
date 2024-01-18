@@ -47,7 +47,7 @@ void process_line(char line[1024], stack_t **stack, unsigned int line_num)
 		nop(stack, line_num);
 	else
 	{ /*Handles unknown opcode*/
-		fprintf(stderr, "Error: Unknown opcode %s\n", opcode);
+		fprintf(stderr, "L%u: unknown opcode %s\n", line_num, opcode);
 		exit(EXIT_FAILURE);
 	}
 }
