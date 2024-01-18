@@ -5,19 +5,26 @@
  * @line_num: line number in the file
  * @value: element to be pushed
  */
-void push(stack_t **stack, unsigned int line_num, int value)
+void push(stack_t **stack, unsigned int line_num, char *value_str)
 {
+	int value;
 	stack_t *new_node;
 
 	/*Parsing of argument from the line*/
-	if (value == 0)
+	if (!value_str)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	value = atoi(value_str);
+	if (value == 0 && value_str[0] != '0')
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_num);
 		exit(EXIT_FAILURE);
 	}
 	/*Creating a new stack node and setting value*/
 	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
