@@ -50,6 +50,14 @@ void process_line(char line[1024], stack_t **stack, unsigned int line_num)
 		{
 			swap(stack, line_num);
 		}
+		else if (strcmp(opcode, "add") == 0)
+		{
+			add(stack, line_num);
+		}
+		else if (strcmp(opcode, "nop") == 0)
+		{
+			nop(stack, line_num);
+		}
 		else
 		{ /*Handles unknown opcode*/
 			fprintf(stderr, "Error: Unknown opcode %s\n", opcode);
