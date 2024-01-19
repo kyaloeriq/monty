@@ -46,7 +46,7 @@ void exec_instruc(instruction_t instr, stack_t **stack, unsigned int line_num)
 		monty_div(stack, line_num);
 	else if (strcmp(instr.opcode, "mul") == 0)
 		monty_mul(stack, line_num);
-	else { /*Handles unknown opcode*/
+	else
+	{ /*Handles unknown opcode*/
 		fprintf(stderr, "L%u: unknown opcode %s\n", line_num, instr.opcode);
-		exit(EXIT_FAILURE);
-	} }
+		exit(EXIT_FAILURE); } }
