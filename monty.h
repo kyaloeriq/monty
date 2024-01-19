@@ -49,5 +49,6 @@ void add(stack_t **stack, unsigned int line_num);
 void nop(stack_t **stack, unsigned int line_num);
 void sub(stack_t **stack, unsigned int line_num);
 void monty_div(stack_t **stack, unsigned int line_num);
+void monty_mul(stack_t **stack, unsigned int line_num);
 
 #endif
