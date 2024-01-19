@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * div - divides the second top element
+ * monty_div - divides the second top element
  * @stack: pointer to stack
  * @line_num: number of line
  */
