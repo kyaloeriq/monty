@@ -4,7 +4,7 @@
  * @stack: pointer to stack
  * @line_num: number of line
  */
-void div(stack_t **stack, unsigned int line_num)
+void monty_div(stack_t **stack, unsigned int line_num)
 {
 	if (!*stack || !(*stack)->next)
 	{
