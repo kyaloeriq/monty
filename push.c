@@ -11,11 +11,6 @@ void push(stack_t **stack, unsigned int line_num, char *value_str)
 	stack_t *new_node;
 
 	/*Parsing of argument from the line*/
-	if (!value_str)
-	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_num);
-		exit(EXIT_FAILURE);
-	}
 	value = atoi(value_str);
 	if (value == 0 && value_str[0] != '0')
 	{
